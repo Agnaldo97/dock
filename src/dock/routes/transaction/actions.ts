@@ -45,3 +45,21 @@ export async function getAllAccountTransaction(
     errorHandler(err, res);
   }
 }
+
+export async function getTransactionByPeriod(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
+  try {
+    const startDate = req.params.startDate
+    const endDate = req.params.endDate
+
+    //Get all transaction
+    const response = await transactionService.getTransactionByPeriod(startDate, endDate);
+
+    res.status(200).json(response);
+  } catch (err) {
+    errorHandler(err, res);
+  }
+}

@@ -2,7 +2,7 @@ import * as request from "supertest";
 import * as app from "../../dist/app";
 import * as userFactory from "../utils/factories/userFactory";
 
-describe("Doctor", () => {
+describe("Account", () => {
   let realUser: any;
   let realAccount: any;
 
@@ -34,7 +34,7 @@ describe("Doctor", () => {
         accountType: 1
       });
 
-    expect(response.status).toBe(201);
+    expect(response.status).toBe(200);
   });
 
   it("should not insert a account without idPerson", async () => {

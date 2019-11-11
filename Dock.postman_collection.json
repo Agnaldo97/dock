@@ -132,7 +132,48 @@
 			"response": []
 		},
 		{
+			"name": "Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3131/api/account/balance/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"api",
+						"account",
+						"balance",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get All Transaction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3131/api/transaction/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3131",
+					"path": [
+						"api",
+						"transaction",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Transaction By Period",
 			"request": {
 				"method": "GET",
 				"header": [],
