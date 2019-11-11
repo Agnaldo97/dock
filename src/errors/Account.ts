@@ -9,6 +9,8 @@ export async function errorHandler(err: Error, res: Response): Promise<any> {
   }
 
   switch (err.message) {
+    case "account-is-blocked":
+      return res.status(401).send({ message: "Account is blocked" });
     case "account-not-found":
       return res.status(401).send({ message: "Account not found" });
     case "value-not-available":

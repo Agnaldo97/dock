@@ -109,9 +109,11 @@ export async function updateActive(
 }
 
 async function valideErrors(account, model = undefined) {
-  if (account) throw new ServiceError("account-not-found");
-  if (model.draftValue && account.balance < model.draftValue)
+  if (!account) throw new ServiceError("account-not-found");
+  if (!account.isActive)
+    throw new ServiceError("account-is-blocked");
+  if (model !== undefined && model.draftValue !== undefined  && account.balance < model.draftValue)
     throw new ServiceError("value-not-available");
-  if (model.draftValue && model.draftValue > account.dailyLimit)
+  if (model !== undefined && model.draftValue !== undefined  && model.draftValue > account.dailyLimit)
     throw new ServiceError("operation-not-available");
 }

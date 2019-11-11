@@ -26,8 +26,9 @@ export async function newDraft(
   account: AccountDTO,
   draftValue
 ): Promise<AccountDTO> {
+  const valueBalance: any = account.balance
   const newAccount = await account.update({
-    balance: account.balance - draftValue
+    balance: parseFloat(valueBalance)  - draftValue
   });
   return newAccount;
 }
@@ -36,8 +37,9 @@ export async function newDeposit(
   account: AccountDTO,
   depositValue
 ): Promise<AccountDTO> {
+  const valueBalance: any = account.balance
   const newAccount = await account.update({
-    balance: account.balance + depositValue
+    balance: parseFloat(valueBalance) + depositValue
   });
   return newAccount;
 }
