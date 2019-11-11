@@ -1,7 +1,11 @@
 import { AccountDTO } from "../../models/AccountDTO";
 import { IAccount } from "../../interfaces/IAccount";
+import { sequelize } from "../../sequelize";
+
 
 export async function create(account: IAccount): Promise<AccountDTO> {
+  sequelize.addModels([AccountDTO]);
+
   const response = await AccountDTO.create({
     idPerson: account.idPerson,
     dailyLimit: account.dailyLimit,
