@@ -7,7 +7,6 @@ const create = joi.object().keys({
   balance: joi.number().required(),
   isActive: joi.boolean().required(),
   accountType: joi.number().required(),
-  createdDate: joi.string().required()
 });
 
 const draft = joi.object().keys({

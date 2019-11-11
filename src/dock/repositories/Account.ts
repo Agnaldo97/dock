@@ -8,7 +8,7 @@ export async function create(account: IAccount): Promise<AccountDTO> {
     balance: account.balance,
     isActive: account.isActive,
     accountType: account.accountType,
-    createdDate: account.createdDate
+    createdDate: new Date()
   });
   return response;
 }
