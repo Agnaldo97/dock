@@ -1,6 +1,13 @@
 import { NextFunction, Response } from "express";
 
 export async function errorHandler(err: Error, res: Response): Promise<any> {
+
+  if (Array.isArray(err.message)) {
+    const messageArray = [];
+    err.message.forEach(msg => messageArray.push(msg.message))
+    return res.status(401).send(messageArray)
+  }
+
   switch (err.message) {
     case "account-not-found":
       return res.status(401).send({ message: "Account not found" });
