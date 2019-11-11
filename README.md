@@ -12,11 +12,11 @@ Criar Pessoa > Criar Conta > Criar Transação
 ## Validações 
 
 Foram criadas validações para diferentes cenários:
-1 - Não é possível fazer transações com uma conta bloqueda
-2 - Não é possível sacar um valor maior do que o saldo em conta
-3 - Sempre a válidado se o número da conta informada é existente ou não
-4 - O valor de um transação não pode ser maior que o saldo em conta
-5 - Todo endpoint tem um validator 
+* 1 - Não é possível fazer transações com uma conta bloqueda
+* 2 - Não é possível sacar um valor maior do que o saldo em conta
+* 3 - Sempre a válidado se o número da conta informada é existente ou não
+* 4 - O valor de um transação não pode ser maior que o saldo em conta
+* 5 - Todo endpoint tem um validator 
 
 ## Endpoints:
 
@@ -58,10 +58,10 @@ Foram criados 10 endpoonts:
 
 ## Inicializar e Testar:
 
-1 - Faça um clone desse projeto em sua máquina
-2 - Abra a pasta db e rode o seguinte comando: docker-compose -f postgre.yml  up
-3 - Volte a raiz do projeto e digite npm i & npm start
-4 - Importe a collection citada acima em seu postman, nela terá exemplos de todos os endpoints
+* 1 - Faça um clone desse projeto em sua máquina
+* 2 - Abra a pasta db e rode o seguinte comando: docker-compose -f postgre.yml  up
+* 3 - Volte a raiz do projeto e digite npm i & npm start
+* 4 - Importe a collection citada acima em seu postman, nela terá exemplos de todos os endpoints
 
 
 ## Possíveis dúvidas
