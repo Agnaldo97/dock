@@ -28,3 +28,20 @@ export async function createTransaction(
     errorHandler(err, res);
   }
 }
+
+export async function getAllAccountTransaction(
+  req: Request,
+  res: Response,
+  next: NextFunction
+): Promise<void> {
+  try {
+    const idAccount = req.params.idAccount
+
+    //Get all transaction
+    const response = await transactionService.getAll(idAccount);
+
+    res.status(200).json(response);
+  } catch (err) {
+    errorHandler(err, res);
+  }
+}

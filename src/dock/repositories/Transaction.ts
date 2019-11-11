@@ -9,3 +9,12 @@ export async function create(transaction: ITransaction): Promise<TransactionDTO>
   });
   return response;
 }
+
+export async function getAll(idAccount): Promise<TransactionDTO[]> {
+  const response = await TransactionDTO.findAll({
+    where: {
+      idAccount
+    }
+  });
+  return response;
+}

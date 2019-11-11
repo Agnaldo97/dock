@@ -6,3 +6,8 @@ export async function create(transaction: ITransaction): Promise<TransactionDTO>
   const response: TransactionDTO = await Transactionepository.create(transaction);
   return response;
 }
+
+export async function getAll(idAccount): Promise<TransactionDTO[]> {
+  const response: TransactionDTO[] = await Transactionepository.getAll(idAccount);
+  return response;
+}
