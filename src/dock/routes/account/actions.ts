@@ -13,9 +13,9 @@ export async function createAccount(
 ): Promise<void> {
   try {
     const account: IAccount = await accountValidator.validateCreate(req.body);
-    await accountService.create(account);
+    const response = await accountService.create(account);
 
-    res.status(201).send();
+    res.status(200).json(response);
   } catch (err) {
     errorHandler(err, res);
   }
@@ -54,9 +54,9 @@ export async function newDraft(
     await valideErrors(account, model);
 
     //Update Account
-    await accountService.newDraft(account, model.draftValue);
+    const response: AccountDTO = await accountService.newDraft(account, model.draftValue);
 
-    res.status(204).send();
+    res.status(200).json({currentValue: response.balance});
   } catch (err) {
     errorHandler(err, res);
   }
@@ -77,9 +77,9 @@ export async function newDeposit(
     await valideErrors(account);
 
     //Update Account
-    await accountService.newDeposit(account, model.depositValue);
+    const response: AccountDTO =  await accountService.newDeposit(account, model.depositValue);
 
-    res.status(204).send();
+    res.status(200).json({ currentValue: response.balance });
   } catch (err) {
     errorHandler(err, res);
   }
