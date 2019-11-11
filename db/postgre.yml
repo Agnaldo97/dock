@@ -1,0 +1,12 @@
+version: "3.1"
+
+services:
+  db:
+    image: postgres
+    restart: "no"
+    environment:
+      POSTGRES_DB: dock
+      POSTGRES_USER: agnaldo
+      POSTGRES_PASSWORD: dock*2019
+    ports:
+      - 5432:5432
