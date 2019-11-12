@@ -137,23 +137,21 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3131/api/account/balance/1",
+					"raw": "localhost:3131/api/status",
 					"host": [
 						"localhost"
 					],
 					"port": "3131",
 					"path": [
 						"api",
-						"account",
-						"balance",
-						"1"
+						"status"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get All Transaction",
+			"name": "Get All Account Transaction",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -178,7 +176,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:3131/api/transaction/1",
+					"raw": "localhost:3131/api/transaction/2019-11-11 18:53:48/2019-11-11 19:59:48",
 					"host": [
 						"localhost"
 					],
@@ -186,7 +184,8 @@
 					"path": [
 						"api",
 						"transaction",
-						"1"
+						"2019-11-11 18:53:48",
+						"2019-11-11 19:59:48"
 					]
 				}
 			},
@@ -286,14 +285,13 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:3131/api/dock/account/active",
+					"raw": "localhost:3131/api/account/active",
 					"host": [
 						"localhost"
 					],
 					"port": "3131",
 					"path": [
 						"api",
-						"dock",
 						"account",
 						"active"
 					]

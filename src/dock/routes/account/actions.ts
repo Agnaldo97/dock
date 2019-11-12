@@ -73,8 +73,8 @@ export async function newDeposit(
       model.idAccount
     );
 
-    //Validate roles
-    await valideErrors(account);
+    //Validate one rule
+    if (!account) throw new ServiceError("account-not-found");
 
     //Update Account
     const response: AccountDTO =  await accountService.newDeposit(account, model.depositValue);
