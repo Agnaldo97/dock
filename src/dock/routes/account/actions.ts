@@ -30,7 +30,7 @@ export async function getAccountBalance(
     const idAccount: number = parseInt(req.params.idAccount);
     const account = await accountService.getAccount(idAccount);
 
-    //Validete roles
+    //Validate rules
     await valideErrors(account);
 
     res.status(200).json({ balance: account.balance });
@@ -50,7 +50,7 @@ export async function newDraft(
       model.idAccount
     );
 
-    //Validete roles
+    //Validate rules
     await valideErrors(account, model);
 
     //Update Account
@@ -73,7 +73,7 @@ export async function newDeposit(
       model.idAccount
     );
 
-    //Validate roles
+    //Validate rules
     await valideErrors(account);
 
     //Update Account
